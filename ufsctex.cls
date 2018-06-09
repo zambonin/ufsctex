@@ -411,6 +411,21 @@
        \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
        {\normalfont #1}\nobreak \filltocentry{#2}}
 
+\newcommand{\listadealgoritmos}{
+  \pretextualchapter{Lista de Algoritmos}\@starttoc{loa}
+}
+
+\newcommand{\l@algorithm}[2]{
+  \vskip -1em
+  \leftskip -1.5em
+  \rightskip 1.6em
+  \parfillskip -\rightskip
+  \parindent 0em
+  \@tempdima 1.5em
+  \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+  {\normalfont Algoritmo #1}\nobreak \filltocentry{#2}
+}
+
 %---------------------------------------------------------------------------
 % Apêndices e Anexos - Pós-Textuais
 \addto\captionsbrazil{

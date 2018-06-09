@@ -28,6 +28,7 @@
 \usepackage{indentfirst}	% indenta a primeira linha dos paragrafos
 \usepackage{remreset}		% reinicia contadores
 \usepackage{url}
+\usepackage{algorithm, algorithmic}
 
 \usepackage[colorlinks, allcolors=black]{hyperref}
 %---------------------------------------------------------------------------
@@ -263,11 +264,11 @@ através do \\Programa de Geração Automática da Biblioteca Universitária da 
 	    \vspace{5em}
 	    \parindent1.5cm
 	    A ficha de identificação é elaborada pelo próprio autor\\
-	
 
 
-	
-	
+
+
+
 	    Maiores informações em:
 
 	    http://portalbu.ufsc.br/ficha
@@ -292,8 +293,31 @@ através do \\Programa de Geração Automática da Biblioteca Universitária da 
 } %end of pretextuais
 
 %-------------------------------------------------------------------------------
-% Para listagens de algoritmos e de código, recomenda-se consultar os
-% pacotes algorithms e lstlistings, que são usados para definir esses
-% dois tipos de elementos de texto e possuem os comandos
-% \listofalgorithms e \lstlistoflistings, respectivamente.
+% Para listagens de código, recomenda-se consultar o pacote lstlistings, que é
+% usado para definir esse tipo de elemento de texto e possui o comando
+% \lstlistoflistings.
 %-------------------------------------------------------------------------------
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Saída:}}
+\renewcommand{\algorithmicend}{\textbf{fim}}
+\renewcommand{\algorithmicif}{\textbf{se}}
+\renewcommand{\algorithmicthen}{\textbf{então}}
+\renewcommand{\algorithmicelse}{\textbf{senão}}
+\renewcommand{\algorithmicelsif}{\algorithmicelse\ \algorithmicif}
+\renewcommand{\algorithmicendif}{\algorithmicend\ \algorithmicif}
+\renewcommand{\algorithmicfor}{\textbf{para}}
+\renewcommand{\algorithmicforall}{\textbf{para todo}}
+\renewcommand{\algorithmicdo}{\textbf{faça}}
+\renewcommand{\algorithmicendfor}{\algorithmicend\ \algorithmicfor}
+\renewcommand{\algorithmicwhile}{\textbf{enquanto}}
+\renewcommand{\algorithmicendwhile}{\algorithmicend\ \algorithmicwhile}
+\renewcommand{\algorithmicloop}{\textbf{laço}}
+\renewcommand{\algorithmicendloop}{\algorithmicend\ \algorithmicloop}
+\renewcommand{\algorithmicrepeat}{\textbf{repita}}
+\renewcommand{\algorithmicuntil}{\textbf{até}}
+\renewcommand{\algorithmicprint}{\textbf{imprima}}
+\renewcommand{\algorithmicreturn}{\textbf{retorne}}
+\renewcommand{\algorithmictrue}{\textbf{verdadeiro}}
+\renewcommand{\algorithmicfalse}{\textbf{falso}}
+\renewcommand{\algorithmiccomment}[1]{\hfill $\triangleright$ #1}
