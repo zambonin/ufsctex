@@ -21,7 +21,7 @@
 \usepackage[T1]{fontenc}	% codificação do documento produzido
 
 \NeedsTeXFormat{LaTeX2e}   % Identifica a versão de LaTeX em uso
-\ProvidesClass{ufsctex}    % Informa o tipo de documentclasse que ele é
+\ProvidesClass{ufsctex/ufsctex}    % Informa o tipo de documentclasse que ele é
 %---------------------------------------------------------------------------
 % Passa as opções não interessantes para a classe base ABNTex
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{abnt}}
@@ -29,7 +29,7 @@
 
 %---------------------------------------------------------------------------
 % Carrega classe ABNTex, com padrão de página A5, fonte 10pt, frente e verso
-\LoadClass[cleardoublepage=plain,a5paper,10pt,twoside,capchap,capsec,openright,abntfigtabnum,espacosimples]{abnt}
+\LoadClass[a5paper,10pt,twoside,capchap,capsec,openright,abntfigtabnum,espacosimples]{abnt}
 
 %---------------------------------------------------------------------------
 % Definicao da geometria da página
@@ -69,7 +69,7 @@
 % em alguns pontos; a ideia é que, nestes pontos,
 % \uppercase seja usado como "plano de contingência".)
 \newcommand\ufsctex@uppercase[1]{%
-    \texorpdfstring{\MakeUppercase{#1}}{\uppercase{#1}}%
+    \texorpdfstring{\MakeUppercase{#1}}{#1}%
 }
 
 %---------------------------------------------------------------------------
@@ -293,7 +293,7 @@
     \@dottedchaptocline{1}{0pt}{\espacosumario}%{1.2em}
 	{\normalsize\ABNTtocchapterfont{#1}}
 	{#2}}
-	
+
 
 \renewcommand*\l@section[2]{
     \@dottedtocline{1}{0pt}{\espacosumario}%{2em}
@@ -423,7 +423,8 @@
 \renewenvironment{thebibliography}[1]%
   {% replacing \chapter*{\ABNTbibliographyname\@mkboth...}
    \raggedright
-   \if@openright\cleardoublepage\else\clearpage\fi%
+   \cleardoublepage
+   \phantomsection
    \thispagestyle{\chaptertitlepagestyle}%
    \global\@topnum\z@%
    \@afterindentfalse%
@@ -711,7 +712,6 @@
     \@restonecolfalse\newpage
 \fi
 \thispagestyle{empty} 	% Define o estilo desta página como vazio
-\setcounter{page}\z@	% Reseta o contador de páginas. Parece não ser necessário aqui
 \begin{center}
     \begin{espacosimples}
 	\ABNTifnotempty{\ABNTinstituicaodata}%
@@ -755,7 +755,6 @@
 \end{center}
 \vspace{1cm}
 \if@restonecol\twocolumn \else \newpage \fi
-\setcounter{page}\z@	% Reseta o contador de páginas. Parece não ser necessário aqui
 }% end of \capa
 
 %-------------------------------------------------------------------------------
