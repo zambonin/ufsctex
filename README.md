@@ -1,3 +1,5 @@
+# **Esta classe está depreciada em favor de https://github.com/alexishuf/ufsc-thesis-rn46-2019.**
+
 UFSCTeX
 =======
 
